@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form method = "get">
+        <fieldset>
+            <legend>일반 text 입력</legend>
+            <input type="text" name="param_name" id="id" value=""
+            minlength="3" maxlength="10" size="12"
+            placeholder="사용자입력"
+            list="mylist"
+            required><br>
+            <input type="hidden" name ="param_name" id = "hidden_id"
+            value="hidden_value">
+            <button type="submit"> 전송버튼</button>
+             <!-- //readyonly : 읽기전용 disable : 전송자체가 안됨
+                //사용자 입력 데이터의 유효성 검사 
+                    1.사용자 브라우저에서 검사
+                    2.서버에서 검사 
+                    3.전부 다 (서버, 사용자) -->
+
+            <input type="password" name="" id="">
+            <input type="checkbox" name="" id="">
+            <input type="radio" name="" id="">
+            <button type="submit"> 전송버튼</button>
+        </fieldset>
+        <fieldset>
+            <legend>체크박스</legend>
+            <input type="checkbox" name="param_check" id="check_id1" value="a"><label
+            for="check_id1">1</label>
+            <input type="checkbox" name="param_check" id="check_id"value="b"checked>2
+            <input type="checkbox" name="param_check" id="check_id"value="c">3
+            <input type="checkbox" name="param_check" id="check_id"value="d">4
+            <input type="checkbox" name="param_check" id="check_id"value="f">5
+            <button type="submit">전송버튼</button>
+        </fieldset>
+        <fieldset>
+            <legend>버튼</legend>
+            <input type = "button" value="버튼">
+            <input type="submit" value="전송">
+            <!-- css 디자인 적용이 잘됨 -->
+            <button type="button">버튼</button>
+            <button type="submit">전송버튼</button> 
+        </fieldset>
+        <fieldset>
+            <legend>날자입력</legend>
+            <input type="date" name="param_date" id = "date_id">
+            <input type="datetime-local" name="param_datetime_local" id="datetime_local_id">
+            <input type="time" name="param_time" id="time_id">
+            <input type="month" name="param_month" id="month_id">
+            <input type="week" name="param_week" id="week_id">
+            <button type="submit">전송버튼</button>
+        </fieldset>
+        <fieldset>
+            <legend>숫자입력</legend>
+            <input type="number" name="param_number" id="number_id"
+             min="10" max="20" step="0.01">
+            <button type="submit">전송버튼</button>
+        </fieldset>
+    </form>
+    <datalist id="mylist">
+        <option value="값1"></option>
+        <option value="값2"></option>
+        <option value="값3"></option>
+    </datalist>
+    <fieldset>
+        <legend>다이얼</legend>
+        <input type="range" name="param_range" id ="range_id"
+        min="10" max="100" step="10" placeholder="정수">
+        <button type="submit">전송버튼</button>
+        <diallist id="mydial">
+            <option value="0"></option>
+        </diallist>
+    
+    </fieldset>
+    <fieldset>
+        <legend>파일버튼</legend>
+        <input type="file" name="param_file1" id="file_id1"><br>
+        <input type="file" name="param_file2" id="file_id2" multiple><br>
+        <input type="file" name="param_file3" id="file_id3" accept=".txt" >
+        <button type="submit">전송버튼</button>
+    </fieldset>
+    
+    <form method="get">
+        <fieldset>
+            <legend>텍스트영역</legend>
+            <textarea name="param_textarea" id="textarea_id" cols="30" rows="10"
+            maxlength="10" minlength="2" placeholder="텍스트입력" 
+            >초기값</textarea> 
+        </fieldset>
+    <fieldset>
+        <legend>선택박스</legend>
+        <select name="param_select" id="select_id">
+                <option value="전송할값1">보이는값1</option>
+                <option value="전송할값2"selected>보이는값2</option>
+                <option value="전송할값3">보이는값3</option>
+        </select>
+        <select name="param_select2" id="select_id2">
+            <option value="전송할값1">보이는값1</option>
+            <option value="전송할값2">보이는값2</option>
+            <option value="전송할값3">보이는값3</option>
+    </select>
+        <select name="param_select3" id="select_id3" size="5" multiple>
+            <option value="전송할값1">보이는값1</option>
+            <option value="전송할값2">보이는값2</option>
+            <option value="전송할값3">보이는값3</option>
+            <option value="전송할값4">보이는값4</option>
+            <option value="전송할값5">보이는값5</option>
+            <option value="전송할값6">보이는값6</option>
+    </select>
+    <select name="parm_select3" id="select_id3">
+        <optgroup>
+            <optgroup label="그룹1">
+            <option value="1">그룹1-1</option>
+            <option value="2">그룹1-2</option>
+            <option value="3">그룹1-3</option>
+        </optgroup>
+        <optgroup>
+            <optgroup label="그룹2">
+            <option value="4">그룹2-1</option>
+            <option value="5">그룹2-2</option>
+            <option value="6">그룹2-3</option>
+        </optgroup>
+    </select>
+    </fieldset>
+
+    <fieldset>
+        <legend>프로그래스 바</legend>
+        <progress name ="param_progress" id="progress_id"></progress><br>
+        <progress name ="param_progress" id="progress_id" max="100" value="20"></progress><br>
+        <progress name ="param_progress" id="progress_id" max="100" value="50"></progress><br>
+        <progress name ="param_progress" id="progress_id" max="100" value="70"></progress><br>
+        <progress name ="param_progress" id="progress_id" max="100" value="100"></progress><br>
+        
+    </fieldset>
+    <fieldset>
+        <legend>meter 미터</legend>
+        <meter name ="param_progress" id="progress_id"></meter><br>
+        <meter name ="param_progress" id="progress_id" max="100" value="20"></meter><br>
+        <meter name ="param_progress" id="progress_id" max="100" value="50"></meter><br>
+        <meter name ="param_progress" id="progress_id" max="100" value="70"></meter><br>
+        <meter name ="param_progress" id="progress_id" max="100" value="100"></meter><br>
+    </fieldset>
+    <fieldset>
+        <legend>meter 미터</legend>
+        <meter></meter><br>
+        <meter max="100" value="20"></meter><br>
+        <meter max="100" value="50"></meter><br>
+        <meter max="100" value="70"></meter><br>
+        <meter min="0"max="100" low="30" high = "80" value="20"></meter><br>
+    </fieldset>
+    </form>
+</body>
+</html>

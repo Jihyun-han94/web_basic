@@ -1,0 +1,66 @@
+html{
+    font-size: 20px;
+    font-family: '맑은 고딕', Courier, monospace;
+}
+
+h1{font-size: 5rem;}
+h2{font-size: 4rem;}
+h3{font-size: 3rem;}
+
+.shadow{
+    text-shadow: 8px 8px 5px rgb(92,92,92);
+}
+
+.text-center{
+    text-align: center;
+}
+.text-left{
+    text-align: left;
+}
+.text-right{
+    text-align: right;
+}
+
+p{
+    color:rgb(189, 30, 30);
+    letter-spacing: 5px;
+    white-space: nowrap;
+}
+
+
+a{
+    color: royalblue;
+    text-decoration: none;
+}
+
+a:hover{
+    color: salmon;
+    font-weight: bolder;
+}
+
+.text-indent{
+    text-indent: 50px;
+}
+
+.line-height{
+    line-height: 100px;
+}
+
+.width-100{
+    width:100px;
+    background-color: beige;
+}
+.text-overflow{
+    overflow: hidden;
+    white-space: nowrap; /*자동개행 하지말아라*/
+    text-overflow: ellipsis;
+}
+
+ol{
+    list-style-position: inside;
+}
+
+.list-img{
+    list-style-image: url("/web02/img/smallpic.png");
+   
+}

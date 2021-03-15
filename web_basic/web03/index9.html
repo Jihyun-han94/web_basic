@@ -1,0 +1,226 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM</title>
+</head>
+<body>
+    <section>
+        <h1>DOM 생성</h1>
+        <p><code>document.createElement("<i>TagName</i>")</code></p>
+        <textarea id="example1" readonly></textarea>
+        <div>
+            <input type="text" id="set_exam1">
+            <button type="button" onclick="exampleDOM1();">Click</button>
+        </div>
+    </section>
+
+    <section>
+        <h1>DOM 특정 객체의 자식으로 배치</h1>
+        <p><code><i>parentElement</i>.appendChild(<i>childElement</i>)</code></p>
+        <select id="example2">
+            <option>옵션 1</option>
+        </select>
+        <div>
+            <input type="text" id="set_exam2">
+            <button type="button" onclick="exampleDOM2();">Click</button>
+        </div>
+    </section>
+
+    <section>
+        <h1>DOM 목록의 요소로 추가</h1>
+        <p><code><i>listElement</i>.insertBefore(<i>itemElement</i>, <i>childElement</i>)</code></p>
+        <p>listElement 는 목록형태의 모든 태그를 사용할 수 있음.(목록 형식의 구조를 가지면 모두 적용 가능)</p>
+        <select id="example3">
+            <option>옵션 1</option>
+        </select>
+        <div>
+            <input type="text" id="set_exam3"><input type="text" id="set_idx3" value="0">
+            <button type="button" onclick="exampleDOM3();">Click</button>
+        </div>
+    </section>
+
+    <section>
+        <h1>DOM 자식이 아닌 형제로 배치</h1>
+        <p><code><i>element</i>.insertAdjacentElement(<i>location</i>, <i>newElement</i>)</code></p>
+        <p>요소를 배치하기 위해 사용하는 location 값
+            <ul>
+                <li><strong>beforebegin : 시작 태그 앞에 배치</strong></li>
+                <li>afterbegin : 시작 태그 뒤에 배치</li>
+                <li>beforeend : 종료 태그 앞에 배치</li>
+                <li><strong>afterend : 종료 태그 뒤에 배치</strong></li>
+            </ul>
+        </p>
+        <div>
+            <button type="button" onclick="exampleDOM4(this, 'beforebegin');">앞에추가</button>
+        </div>
+        <div>
+            <button type="button" onclick="exampleDOM4(this, 'afterend');">뒤에추가</button>
+        </div>
+    </section>
+
+    <section>
+        <h1>테이블의 행 추가하기</h1>
+        <div>
+            <button type="button" onclick="addRow()">추가</button>
+        </div>
+        <table id="example5" border="1">
+            <tr>
+                <th>번호</th> <th>제목</th> <th>이름</th> <th>날짜</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>aaaa</td>
+                <td>홍길동</td>
+                <td>2021-03-01</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>bbbb</td>
+                <td>김철수</td>
+                <td>2021-03-02</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>cccc</td>
+                <td>박소라</td>
+                <td>2021-03-03</td>
+            </tr>
+        </table>
+    </section>
+
+    <section>
+        <h1>속성 추가</h1>
+        <p id="example6">아래의 버튼을 클릭하면 배경 색이 바뀜니다.</p>
+        <div>
+            <button type="button" onclick="changeColor('red')">Red!</button>
+            <button type="button" onclick="changeColor('green')">Green!</button>
+            <button type="button" onclick="changeColor('blue')">Blue!</button>
+        </div>
+    </section>
+
+    <section>
+        <h1>포커스 이벤트</h1>
+        <div>
+            <input type="text"
+                onfocus="this.value = '포커스 인 발생!'"
+                onblur="this.value = '포커스 아웃 발생!'">
+        </div>
+    </section>
+
+    <section>
+        <h1>키보드 이벤트</h1>
+        <p id="res_example7"></p>
+        <div>
+            <input type="text" id="example7">
+            <button type="button" onclick="addEvent();">이벤트 등록!</button>
+        </div>
+    </section>
+
+    <section>
+        <h1>마우스 이벤트</h1>
+        <div id="example8" style="display: inline-block; width: 250px; height: 250px; border: 1px solid black;">여기에서 마우스를 움직이세요.</div>
+        <div>
+            <button type="button" onclick="addMouse();">이벤트 등록!!</button>
+        </div>
+    </section>
+</body>
+<style>
+    .text-color { color: white; }
+</style>
+<script type="text/javascript">
+function mouseEnterEvent() {
+    this.innerText = "마우스가 영역 안으로 들어왔습니다.";
+}
+function mouseLeaveEvent() {
+    this.innerText = "마우스가 영역 밖으로 나갔습니다.";
+}
+function mouseMoveEvent(event) {
+    this.innerHTML =  "X : " + event.clientX + ", Y : " + event.clientY + "<br>";
+    this.innerHTML += "X : " + event.offsetX + ", Y : " + event.offsetY + "<br>";
+}
+
+function addMouse() {
+    var element = document.getElementById("example8");
+    element.addEventListener('mouseenter', mouseEnterEvent);
+    element.addEventListener('mouseleave', mouseLeaveEvent);
+    element.addEventListener('mousemove', mouseMoveEvent);
+    /*
+        click, dblclick, wheel, contextmenu(마우스 오른쪽 클릭)
+        mouseover(mouseenter와 동일하나 자식요소 포함)
+        mouseout(mouseleabe와 동일하나 자식요소 포함)
+    */
+}
+
+function keyupEvent() {
+    document.getElementById("res_example7").innerText = "키보드 UP!!";
+}
+function keydownEvent() {
+    document.getElementById("res_example7").innerText = "키보드 DOWN!!";
+}
+function keypressEvent() {
+    document.getElementById("res_example7").innerText = "키보드 PRESS!!";
+}
+
+function addEvent() {
+    var element = document.getElementById("example7");
+    // element.addEventListener("keyup", function(){
+    //     this.value = "키보드 입력 이벤트 발생!!"
+    // });
+    element.addEventListener("keyup", keyupEvent);
+    element.addEventListener("keydown", keydownEvent);
+    element.addEventListener("keypress", keypressEvent);
+    document.getElementById("res_example7").innerText = "키보드 이벤트 등록을 하였습니다."
+}
+
+function changeColor(color) {
+    var element = document.getElementById("example6");
+    element.style.backgroundColor = color;
+    element.setAttribute("class", "text-color");
+}
+
+function addRow() {
+    var table = document.getElementById("example5");
+    var row = document.createElement("tr");
+    for (let i = 0; i < 4; i++) {
+        row.appendChild(document.createElement("td"))
+    }
+    var rows = table.getElementsByTagName("tr");
+    var lastRow = rows[rows.length - 1];
+    row.getElementsByTagName("td")[0].innerText = parseInt(lastRow.getElementsByTagName("td")[0].innerText) + 1;
+
+    var date = new Date();
+    row.getElementsByTagName("td")[3].innerText = date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate();
+
+    table.appendChild(row);
+}
+
+function exampleDOM1() {
+    var tag_name = document.getElementById("set_exam1").value
+    var newElement = document.createElement(tag_name);
+    document.getElementById("example1").innerText = newElement.outerHTML;
+}
+
+function exampleDOM2() {
+    var newElement = document.createElement("option");
+    newElement.innerText = document.getElementById("set_exam2").value;
+    document.getElementById("example2").appendChild(newElement);
+}
+
+function exampleDOM3() {
+    var index = document.getElementById("set_idx3").value;
+    var newElement = document.createElement("option");
+    newElement.innerText = document.getElementById("set_exam3").value;
+    var list = document.getElementById("example3");
+    list.insertBefore(
+        newElement, list.getElementsByTagName("option")[parseInt(index)]
+    );
+}
+
+function exampleDOM4(element, location) {
+    var newElement = document.createElement("input");
+    element.insertAdjacentElement(location, newElement);
+}
+</script>
+</html>

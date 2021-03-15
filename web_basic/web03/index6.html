@@ -1,0 +1,139 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>문제</title>
+</head>
+<style>
+    span {
+        display: inline-block;
+        border: 1px solid black;
+        border-radius: 50%;
+        width: 36px; height: 36px;
+        text-align: center;
+    }
+    .color1to10 {
+        background-color:lightyellow;
+    }
+    .color11to20 {
+        background-color:lightskyblue;
+    }
+    .color21to30 {
+        background-color:lightsalmon;
+    }
+    .color31to40 {
+        background-color:lightslategray;
+    }
+    .color41to45 {
+        background-color:lightseagreen;
+    }
+</style>
+<body>
+    <h1>1번 문제 결과 출력</h1>
+    <h3 id="ex1"></h3>
+
+    <h1>2번 문제 결과 출력</h1>
+    <h3 id="ex2"></h3>
+
+    <h1>3번 문제 결과 출력</h1>
+    <h3 id="ex3"></h3>
+
+    <h1>4번 문제 결과 출력</h1>
+    <h3 id="ex4"></h3>
+
+    <h1>5번 문제 결과 출력</h1>
+    <h3 id="ex5"><span>4</span></h3>
+</body>
+<script type="text/javascript">
+/*
+    1. 1 ~ 45 까지의 랜덤 값을 6개 생성하여 출력
+*/
+for (var i = 0; i < 6; i++) {
+    document.getElementById("ex1").innerHTML += Math.floor(Math.random() * 45 + 1) + " "
+}
+/*
+    2. 1 ~ 45 까지의 랜덤 값(중복 없는 값)을 6개 생성하여 출력
+*/
+var lotto = [];
+var rand;
+while (lotto.length < 6) {
+    rand = Math.floor(Math.random() * 45 + 1);
+    if (lotto.indexOf(rand) == -1) {
+        lotto.push(rand);
+    }
+}
+for (n of lotto) {
+    document.getElementById("ex2").innerHTML += n + " ";
+}
+
+/*
+    3. 1 ~ 9 단까지 구구단 출력
+*/
+for(var i = 1; i <= 9; i++) {
+    for(var j = 1; j <= 9; j++) {
+        document.getElementById("ex3").innerHTML += i + " x " + j + " = " + (i * j) + " ";
+    }
+    document.getElementById("ex3").innerHTML += "<br>";
+}
+
+/*
+    4. 1 ~ 45 까지의 랜덤 값(중복 없는 값)을 6개 생성후 정렬하여 출력
+*/
+var lotto = [];
+var rand;
+while (lotto.length < 6) {
+    rand = Math.floor(Math.random() * 45 + 1);
+    if (lotto.indexOf(rand) == -1) {
+        lotto.push(rand);
+    }
+}
+function asc(x, y) { return x - y; }
+function desc(x, y) { return y - x; }
+lotto.sort(asc);
+for (n of lotto) {
+    document.getElementById("ex4").innerHTML += n + " ";
+}
+
+/*
+*/
+function asc(x, y) { return x - y; }
+function desc(x, y) { return y - x; }
+function setColor(number) {
+    let str = "";
+    str += "<span class=";
+    switch (Math.floor((number - 1) / 10)) {
+        case 0: str += "'color1to10'>" + number;   break;
+        case 1: str += "'color11to20'>" + number;   break;
+        case 2: str += "'color21to30'>" + number;   break;
+        case 3: str += "'color31to40'>" + number;   break;
+        case 4: str += "'color41to45'>" + number;   break;
+    }
+    str += "</span> ";
+    return str;
+}
+var lotto = [];
+var rand;
+while (lotto.length < 6) {
+    rand = Math.floor(Math.random() * 45 + 1);
+    if (lotto.indexOf(rand) == -1) {
+        lotto.push(rand);
+    }
+}
+lotto.sort(asc);
+var str = "";
+for (n of lotto) {
+    str += setColor(n);
+}
+/* 보너스 번호 생성 용 */
+while (lotto.length < 7) {
+    rand = Math.floor(Math.random() * 45 + 1);
+    if (lotto.indexOf(rand) == -1) {
+        lotto.push(rand);
+    }
+}
+str += " + " + setColor(lotto[6]);
+document.getElementById("ex5").innerHTML = str;
+
+</script>
+</html>

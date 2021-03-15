@@ -1,0 +1,136 @@
+/*전체 선택자 */
+*{color: red;}  
+
+h1{text-align: center;}
+h2,h3{text-align: center;}
+
+/*아이디 선택자*/
+#main {background-color: beige;}
+
+/*클래스 선택자*/
+.content{background-color:ivory;}
+
+/*자손 선택자*/
+ul>li {font-weight: bold; color: black;}
+
+/*후손 선택자*/
+ul span {color: gray;}
+
+/*동위 선택자*/
+.dt-title1 + dd{
+    color: blue;
+}
+
+.dt-title2 ~dd{
+    color: green;
+}
+
+/*속성 선택자*/
+a[href]{
+    color : brown;
+}
+
+a[href ="#"]{
+    color : black;
+}
+
+a[href~="naver.com"]{
+    color : green;
+}
+
+a[href|="ko"]{
+    color :cornflowerblue;
+}
+
+a[href^="first"]{
+    color: orange;
+}
+
+a[href$="end"]{
+    color: darkseagreen;
+}
+
+a[href*="-string-"]{
+    color: lightpink;
+}
+
+div>*{
+    color: black;
+}
+
+div>:active{
+    background-color: black; color: white;
+}
+
+div>:checked{
+    margin: 10px;
+}
+
+div>:disabled{
+    background-color: sandybrown; color: white;
+}
+
+div>:empty{
+    background-color: beige; color: black;
+}
+
+div>:enabled{
+    background-color: burlywood; color: black;
+}
+
+div>:hover{
+    background-color: cyan; color: white;
+}
+
+div>:focus{
+    background-color: yellow; color: black;
+}
+
+/*odd : 홀수 , even : 짝수 , An+B*/
+.nth-ul>li:nth-child(odd){
+    background-color: blueviolet; color: black;
+}
+.nth-ul>li:nth-child(3n){
+    background-color: orange; color: black;
+}
+
+.nth-child-ul>li:nth-of-type(even){
+    background-color: peachpuff; color: black;
+}
+
+.nth-of-type-ul>li:nth-of-type(even){
+    background-color: darksalmon; color: black;
+}
+
+/* 필수 입력 속성이 있는 입력 양식*/
+input:required{
+    background-color: darkgray; color: black;
+}
+
+/* pseudo elements - 의사요소*/
+.af::after{
+    content:"(인)"
+}
+
+.bf::before{
+    content:"서명:"
+}
+
+.context::first-letter{
+    font-size: 24pt;
+    font-weight: bold;
+}
+
+.context::first-line{
+    background-color: lightslategray;
+}
+
+::marker{
+    color: mediumspringgreen !important;
+}
+
+/*::selection -> 글자 드래그하면 나타남*/
+::selection{ 
+    background-color: olive;
+    color: white;
+}

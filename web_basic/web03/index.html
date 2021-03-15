@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="/web_basic/web03/js/basic01.js" type="text/javascript"></script>
+</head>
+<script>
+    var x = 10;
+    var y = 20;
+    //alert(x+y);
+
+    // HTML 요소가 생성되기 전에 동작하게 됨으로 에러 발생
+    // document.getElemnetById("res").innerHTML = x+y;
+
+    function func1(){
+        var x = 10;
+        var y = 20;
+        document.getElementById("res").innerHTML = x+y;
+    }
+
+</script>
+
+<body>
+
+    <h1 onclick="console.log('Hello Javascript!!')">클릭하세요!</h1>
+    <h1 onclick="alert('Hello Javascript!!')">클릭하세요!</h1>
+    <h1 onclick="document.write('Hello Javascript!!')">클릭하세요!</h1> 
+    <h1 id="res" onclick="document.getElementById('res').innerHTML='Hello Javascript!!'">클릭하세요!</h1>
+    <h1 onclick="func1();">클릭하세요!</h1>
+    <h1 id="res"></h1>
+    <h1 onclick="func2(document.getElementById('res'))">클릭하세요!</h1>
+    <h1 id="res"></h1>
+    <h1 onclick="console.log(confirm('확인 취소 중 선택'));">확인/취소 알람</h1>
+    <h1 onclick="console.log(prompt('임의의 값을 입력'));">사용자가 입력 받을 수 있는 알람</h1>
+    <h1 onclick="document.getElementById('res2').innerHTML=prompt();">사용자가 입력값을 innerHTML으로 출력</h1>
+        <div><input type="text" id="user_in"><input type="button" value="입력" onclick="document.getElementById('res2').innerHTML=document.getElementById('user_in').value">
+    </div>
+    <h1 id="res2"></h1>
+
+
+
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>결과 출력</h1>
+    <h3 id="result"></h3>
+</body>
+<script type="text/javascript">
+if(true){
+    document.getElementById("result").innerHTML="조건식이 참입니다."
+}else{
+    document.getElementById("result").innerHTML="조건식이 거짓입니다."
+}
+
+// 조건식에서 거짓으로 판별하는 값
+// false, undefined, null, NaN , 0 , ""
+
+var num = Math.floor(Math.random() *10);
+if(num <= 3){ 
+    document.getElementById("result").innerHTML="num의 값은 3보다 작습니다."
+}else if(num<=7){
+    document.getElementById("result").innerHTML="num의 값은 7보다 작거나 같습니다."
+}else{
+    document.getElementById("result").innerHTML="num의 값은 7보다 큽니다."
+}
+
+var num = Math.floor(Math.random()*10);
+
+switch(num){
+    case 1:
+    document.getElementById("result").innerHTML=num; break;
+    case 2:
+    document.getElementById("result").innerHTML=num; break;
+    default:
+    document.getElementById("result").innerHTML="범위초과"; break;
+}
+</script>
+
+</html>

@@ -1,0 +1,101 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 16pt; font-family: '맑은 고딕', 'Courier New', Courier, monospace;
+
+}
+
+.container{
+   display: grid;
+   place-items: center;
+   margin-top: 10%;
+}
+
+
+
+
+
+.loginbox{
+    display: inline-block;
+    width: 240px; height: 200px;
+    border: 1px solid lightgrey; margin: 20px;
+    box-sizing: border-box;
+    background-color: rgb(240, 236, 236);
+   
+    
+}
+
+.container>h2{
+    font-size: 15pt;
+    font-weight: bold;
+    margin-left: 0px;
+    margin-top: 15px;
+   
+}
+
+.labelid{
+    font-size: 14px;
+    font-weight: bold;
+    color: black;
+    margin: 15px;
+    margin-top: 20px;
+ 
+   
+}
+.labelpw{
+    font-size: 14px;
+    font-weight: bold;
+    color: black;
+    margin: 15px;
+}
+
+#loginid, #loginpw{
+    width: 200px; height: 25px;
+    margin: 20px;
+    margin-top: 8px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    border:1px solid lightgray;
+    
+}
+
+#loginbtn{
+    width: 200px; height: 25px;
+    margin: 20px;
+    background-color: rgb(8, 143, 8);
+    color: white;
+    font-size: 15px;
+    border-radius: 5px;
+    border:px solid lightgray;
+    text-align: center;
+}
+
+#loginid:hover{
+    border: 3px solid rgb(176, 194, 216);
+    color: white;
+    cursor: pointer;
+}
+
+#loginpw:hover{
+    border: 3px solid rgb(176, 194, 216);
+    color: white;
+    cursor: pointer;
+}
+#loginbtn:hover{
+    background-color: green;
+    border-style: none;
+    cursor: pointer;
+}
+
+#createbtn{
+    width: 240px; height: 40px;
+    text-align: center;
+    font-size: 13px;
+    background-color: white;
+    border-radius: 5px;
+    border:1px solid lightgray;
+}

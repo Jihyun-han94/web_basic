@@ -1,0 +1,113 @@
+*{
+    font-size: 17px;
+    font-family: '나눔스퀘어_ac';
+    font-weight: bold;
+    
+}
+
+
+
+.container{
+    display: grid;
+    grid-template-columns: 230px 60% 1fr;
+    grid-template-rows: 8% 1fr 10%;
+    height: 100vh;
+    grid-gap: 20px;
+    grid-template-areas: 
+    "header header header"
+    "left middle right"
+    "footer footer footer";
+    
+}
+
+.header{
+    grid-area: header;
+    background-color: lightgrey;
+    display: grid;
+    grid-template-areas: 
+    "image html css none login signin";
+    grid-template-columns: 100px 100px  100px 1fr 100px 100px;
+    grid-gap: 10px;
+    padding: 5px;
+}
+.left{
+    grid-area: left;
+    background-color: lightgray;
+    
+}
+.middle{
+    grid-area: middle;
+    background-color:white;
+    border-color: gainsboro;
+    
+}
+.right{
+    grid-area: right;
+    background-color: lightgray;
+}
+.footer{
+    grid-area: footer;
+    background-color:lightgray;
+    
+}
+
+.image{
+    grid-area: image;
+    background-color: white;
+    border-radius: 5px;
+    text-align: center;
+    padding: 10px;
+}
+.html{
+    grid-area:html;
+    background-color:white;
+    text-align: center;
+    padding: 10px;
+    border-radius: 5px;
+}
+.css{
+    grid-area: css;
+    background-color: white;
+    text-align: center;
+    padding: 10px;
+    border-radius: 5px;
+}
+.login{
+    grid-area: login;
+    background-color: white;
+    text-align: center;
+    padding: 10px;
+    border-radius: 5px;
+}
+.signin{
+    grid-area: signin;
+    background-color: white;
+    text-align: center;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.link{
+    text-decoration: none;
+    
+}
+
+.middle>iframe{
+    width: 100%; height: 100%;
+}
+
+.footer{
+    text-align: center;
+}
+
+.ahtmllink , .acsslink{
+    text-decoration: none;
+
+}
+
+.ahtmllink , .acsslink{
+    text-decoration: none;
+    margin-left: 10px;
+    font-size: 15pt;
+
+}

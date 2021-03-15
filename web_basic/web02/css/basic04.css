@@ -1,0 +1,75 @@
+.bg-img{
+    background-image: url(/web02/img/puppy.jfif);
+    background-clip: content-box;
+}
+
+.bg-img2{
+    background-image: url(/web01/img/grapefruit-slice-332-332.jpg);
+    background-clip: content-box;
+    background-repeat: repeat;
+    background-size: auto;
+    background-position: center;
+    background-origin: content-box;
+    border-style: solid;
+    border-width: 10px;
+}
+
+div{
+    padding: 50px;
+    width: 100%;
+    height: 800px;
+}
+
+.inline{
+    background-color: lavender;
+    display: inline;
+    width: 250px; height: 100px;
+    padding: 10px; /*내부여백*/
+    margin: 10px; /*외부여백*/
+    /*
+    border-style: solid;
+    border-color: lightpink;
+    border-width: 10px;   
+    */
+
+    border : 10px solid red;
+    border-radius: 20px;
+}
+
+.block{
+    background-color: lawngreen;
+    display: block;
+    width: 250px;
+    height: 100px;
+    padding: 10px; 
+    margin: 10px;
+}
+
+.inline-block{
+    background-color: lightblue;
+    display: inline-block;
+    width: 250px;
+    height: 100px;
+    padding: 10px 20px 30px 40px; 
+    margin: 10px;
+}
+
+.display-none{
+    background-color: lightpink;
+    display: none;
+    /*visibility: hidden;* 영역은 잇는데 내용이 사라짐 */
+    width: 250px;
+    height: 100px;
+}
+
+table{
+    border-collapse: collapse;
+}
+
+.box-sizing-content-box{
+    /*박스 영역의 크기의 범위를 설정*/
+    box-sizing: content-box;
+}
+.box-sizing-border-box{
+    box-sizing : border-box;
+}

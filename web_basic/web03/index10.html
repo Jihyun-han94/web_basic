@@ -1,0 +1,99 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript 활용</title>
+    <link type="text/css" rel="stylesheet" href="/web_basic/web03/stylesheet.css">
+    <script type="text/javascript" src="/web_basic/web03/js/basic01.js"></script>
+</head>
+<body>
+    <section>
+        <h1>년/월/일 생성하기</h1>
+        <p>
+            <ul>
+                <li>JavaScript를 사용하여 현재 년 부터 ~ 1970년 까지 선택할 수 있는 선택박스를 생성한다.(select, option 태그를 사용)</li>
+                <li>1 ~ 12 월 까지 선택 박스로 생성</li>
+                <li>1 ~ 31 일 까지 선택 박스로 생성(선택된 월에 맞추어 28, 29, 30, 31일로 생성)</li>
+                <li>선택된 년도/월에 맞추어 28, 29, 30, 31 생성할 때 <code>change</code> 이벤트 활용</li>
+                <li>Date 객체의 날짜 연산을 활용하면 각 월의 마지막 일자를 쉽게 구할 수 있음.</li>
+            </ul>
+        </p>
+        <div>
+            <select id="date_year" onfocus="generateYear(this);" onchange="generateDay(document.getElementById('date_day'), this.value, document.getElementById('date_month').value);">
+                <option>년도</option>
+            </select>
+            <select id="date_month" onfocus="generateMonth(this);" onchange="generateDay(document.getElementById('date_day'), document.getElementById('date_year').value, this.value);">
+                <option>월</option>
+            </select>
+            <select id="date_day" onfocus="generateDay(this, document.getElementById('date_year').value, document.getElementById('date_month').value);">
+                <option>일</option>
+            </select>
+        </div>
+    </section>
+
+    <section>
+        <h1>비밀번호/비밀번호 확인</h1>
+        <p>
+            <ul>
+                <li>2개의 비밀번호를 입력받을 수 있는 사용자 입력을 생성</li>
+                <li>처음 입력한 비밀번호의 값과 두번째 입력한 비밀번호의 값을 비교하여 동일한 값인지 확인</li>
+                <li>동일한 값인 경우 사용자 입력 주변 테두리를 초록색으로 변경 후 입력 하단에 "정상적인 비밀번호 입니다" 메시지를 출력</li>
+                <li>동일한 값이 아닌 경우 사용자 입력 주변 테두리를 붉은색으로 변경 후 입력 하단에 "비밀번호가 일치하지 않습니다" 메시지를 출력</li>
+            </ul>
+        </p>
+        <div>
+            <div class="form-group">
+                <label for="pass1" class="form-label">비밀번호 : </label>
+                <input type="password" id="pass1" class="form-control" onchange="passwordCheck(this, document.getElementById('pass2'))">
+            </div>
+            <div class="form-group">
+                <label for="pass2" class="form-label">비밀번호 확인 : </label>
+                <input type="password" id="pass2" class="form-control" onchange="passwordCheck(document.getElementById('pass1'), this)">
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h1>textarea 안의 글자 크기 조절하기</h1>
+        <div>
+            <div>
+                <button type="button" onclick="fontSize(document.getElementById('notepad'), document.getElementById('fsize'), '-')">-</button>
+                <input class="fsize" type="text" id="fsize" value="16" onchange="fontSize(document.getElementById('notepad'), this, '')">
+                <button  type="button" onclick="fontSize(document.getElementById('notepad'), document.getElementById('fsize'), '+')">+</button>
+            </div>
+            <div>
+                <textarea id="notepad"></textarea>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h1>&lt;input type="range"&gt; 를 사용하여 색상 바꾸기</h1>
+        <div>
+            <input type="range" id="red" value="0" min=0 max=255 step=1
+            oninput="changeColor(
+                document.getElementById('red'),
+                document.getElementById('green'),
+                document.getElementById('blue'))"
+            for-set="rgb-code" for-set-index="0">
+
+            <input type="range" id="green" value="0" min=0 max=255 step=1 oninput="changeColor(document.getElementById('red'), document.getElementById('green'), document.getElementById('blue'))" for-set="rgb-code" for-set-index="1">
+            <input type="range" id="blue" value="0" min=0 max=255 step=1
+            oninput="changeColor(
+                document.getElementById('red'),
+                document.getElementById('green'),
+                document.getElementById('blue'))"
+            for-set="rgb-code" for-set-index="2">
+        </div>
+        <div>
+            <span class="color-picker"></span>
+        </div>
+        <div>
+            <span class="rgb-code">R : 0</span>
+            <span class="rgb-code">G : 0</span>
+            <span class="rgb-code">B : 0</span>
+        </div>
+    </section>
+</body>
+</html>

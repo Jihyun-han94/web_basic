@@ -1,0 +1,24 @@
+<!-- <input type = "text">로 지정한 영역의 글자 크기 바꾸기 (change) -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>example02</title>
+    <script src="/web_basic/web03/js/example02.js"></script>
+</head>
+<body>
+    <section>
+        <div>
+            <button type="button" onclick="fontSize(document.getElementById('note'),document.getElementById('fsize'),'-')">-</button>
+            <input type="text" id="fsize" value="15" onchange="fontSize(document.getElementById('note'),this,'')">
+            <button type="button" onclick="fontSize(document.getElementById('note'),document.getElementById('fsize'),'+')">+</button>
+        </div>
+        <div>
+            <textarea id="note" ></textarea>
+        </div>
+    </section>
+</body>
+</html>

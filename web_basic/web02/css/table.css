@@ -1,0 +1,43 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+
+html{
+    font-size: 16pt; font-family: '맑은고딕';
+}
+
+table,tr,td,th{
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+th,td{
+    padding: 12px;
+}
+
+table[class~="hover"] tr:hover{
+    background-color: darkgrey;
+}
+
+table.stripe{
+    border-style: none;
+}
+
+table.stripe tr{
+    border-style: none;
+}
+
+table.stripe td{
+    border-style: none;
+}
+
+table.stripe th{
+    border-style: none;
+}
+
+table.stripe tr:nth-child(even){
+    background-color: lightgray;
+}

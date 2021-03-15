@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>문제 1번 결과</h1>
+    <input id ="args1"type="text">
+    <h3 onclick="innerHTML= sum(document.getElementById('args1').value.split(' '));">클릭하면 모든 정수의 합을 구한다</h3>
+
+    <h1>문제 2번</h1>
+    <p>아래의 입력 양식에 문자열을 입력하시오</p>
+    <input type="text" id="args2">
+    <h3 id="res2" onclick="innerHTML=passCheck(document.getElementById('args2').value)">클릭하세요</h3>
+
+    <h1>문제 3번</h1>
+    <p>아래의 입력 양식에서 실수값을 입력하시오.</p>
+    <input id="args3" type="text">
+    <h3 id="res3" onclick="innerHTML = round(document.getElementById('args3').value,3)">클릭하세요.</h3>
+</body>
+<script type="text/javascript">
+// 1. n개 이상의 값을 전달 받아 총 합을 구하는 함수 작성
+
+// 2. 패스워드가 영문자 대/소문자의 조합으로 되어있는지 확인하는 함수 작성
+
+//3. 실수값과 자릿수 값을 인자로 전달받아 지정된 자릿수까지 반올림 계산을 수행하는 함수 작성 
+
+
+function sum(x){
+    if(Array.isArray(x)){
+        arguments =x;
+    }
+    let tot =0;
+    for(n of arguments){
+        tot +=parseInt(n);
+    }
+    return tot;
+}
+
+function passCheck(password){
+    let upper = false;
+    let lower = false;
+    
+    for(let i =0 ; i<password.length; i++){
+        let code = password[i].charCodeAt();
+        if(code >= 65 && code <=90){
+            upper = true;
+        }
+        if(code >=97 && code <=122){
+            lower = true;
+        }
+    }
+    
+    if(upper && lower){
+        return true;
+    }else{
+        return false;
+    }
+}
+
+function round(float, point){
+    point = Math.pow(10,parseInt(point));
+    return Math.round(parseFloat(float)*point)/point;
+    //.toFixed 메소드 쓰면 반올림됨
+}
+
+
+
+</script>
+</html>

@@ -1,0 +1,21 @@
+<!-- <input type ="text">로 지정한 영역의 색상 바꾸기(change) -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>example03</title>
+    <script src="/web_basic/web03/js/example03.js"></script>
+</head>
+<body>
+    <section>
+        <div>
+            <input type="text" onkeypress="changeColor(document.getElementById('textarea') , this.value)">
+        </div>
+        <div >
+            <textarea id="textarea" cols="30" rows="10"></textarea>
+        </div>
+    </section>
+</body>
+</html>

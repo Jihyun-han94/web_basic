@@ -1,0 +1,27 @@
+.day{
+    font-weight: bold;
+}
+
+table{
+    background-color: white;
+    border: 1px black solid;
+}
+
+th{
+    background-color: red;
+    color: white;
+}
+td{
+    background-color: yellow;
+}
+.last{
+    background-color: tomato;
+    color: green;
+}
+
+.button{
+    background-color: green;
+    color: white;
+    border-width: 2px;
+    border-color: white;
+}
