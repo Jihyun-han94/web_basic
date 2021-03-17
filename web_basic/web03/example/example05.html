@@ -1,17 +1,150 @@
+<!-- <input type = "text">로 지정한 영역의 글자 크기 바꾸기 (change) -->
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>example05</title>
-    <script src="/web_basic/web03/js/example05.js"></script>
+    <link rel="stylesheet" href="/web_basic/web03/css/example05.css" type="text/css">
+    <script type="text/javascript" src="/web_basic/web03/js/example05.js"></script>
+    <link rel="stylesheet" href="/web_basic/static/bootstrap-5.0.0-beta2-dist/css/bootstrap.css">
+    <script type="test/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="/web_basic/static/bootstrap-5.0.0-beta2-dist/js/bootstrap.js"></script>
+    <link rel="stylesheet" href="/web_basic/web03/css/example01.css" type="text/css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.6.0/styles/atom-one-light.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.6.0/highlight.min.js"></script>
+    <script
+        src="//cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.7.0/highlightjs-line-numbers.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script>hljs.initLineNumbersOnLoad();</script>
 </head>
+
 <body>
     <section>
-        <div>
-            <input type="text" onkeypress="containsChars(this,'!@#$%^&')" id="inputbox">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">로고</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="/web_basic/web03/index_boot.html">Home</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                활용예제
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="/web_basic/web03/example/example01.html">1. 선택 박스로
+                                        1970년 까지의 옵션
+                                        생성하기</a></li>
+                                <li><a class="dropdown-item" href="/web_basic/web03/example/example02.html">2. 지정한 영역의 글자 크기 바꾸기</a></li>
+                                <li><a class="dropdown-item" href="/web_basic/web03/example/example03.html">3. 지정한 영역의 색상 바꾸기</a></li>
+                                <li><a class="dropdown-item" href="/web_basic/web03/example/example04.html">4. 숫자가 아닌 입력이 발생하면 테두리를 붉게 변경</a></li>
+                                <li><a class="dropdown-item" href="/web_basic/web03/example/example05.html">5. 특수 문자 입력이 발생하면 테두리를 붉게 변경</a></li>
+                                <li><a class="dropdown-item" href="/web_basic/web03/example/example06.html">6. 랜덤한 사칙연산 문제가 제시되고 제시한 문제의 답을 입력했을 때 정답/오답을 판별하게
+                                        하기</a></li>
+                                <li><a class="dropdown-item" href="/web_basic/web03/example/example07.html">7. BMI 계산하여 출력 메세지 색상 다르게 표기</a></li>
+                                <li><a class="dropdown-item" href="/web_basic/web03/example/example08.html">8. 선택박스로 20년까지 옵션 생성한 후, 선택 옵션에서 추가 10년까지의 옵션
+                                        생성</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="#">전체 목록 보기</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                        </li>
+                    </ul>
+                    <form class="d-flex">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+
+        <div class="example5">
+            <hr>
+            <h3 id="ex5">문제 적용 화면</h3>
+            <div id="ex5">
+                <section>
+                    <div>
+                        <input type="text" onkeypress="containsChars(this,'!@#$%^&')" id="inputbox">
+                    </div>
+                </section>
+            </div>
         </div>
+
+        <div class="example5">
+            <hr>
+            <h3 id="ex5">HTML</h3>
+            <article id="ex5">
+            <p>
+            <pre><code class="html">       
+                &lt;section>
+                    &lt;div>
+                        &lt;input type="text" onkeypress="containsChars(this,'!@#$%^&')" id="inputbox">
+                    &lt;/div>
+                &lt;/section>
+            </code></pre>
+                </p>
+            </article>
+            <hr>
+        </div>
+
+        <div class="example5">
+            <hr>
+            <h3 id="ex5">CSS</h3>
+            <article id="ex5">
+                <p>
+                <pre><code class="css">
+                .example5{
+                margin: 10px;
+                }
+                <br>
+                #ex5{
+                margin: 10px;
+                }
+              </code></pre>
+                </p>
+            </article>
+            <hr>
+        </div>
+
+        <div class="example5">
+            <hr>
+            <h3 id="ex5">JavaScript</h3>
+            <article>
+                <div id="ex5">
+                    <pre><code class="javascript">
+            function containsChars(input, chars) {
+                for (var inx = 0; inx < input.value.length; inx++) {
+                   if (chars.indexOf(input.value.charAt(inx)) != -1) {          
+                         input.style.border = "3px solid red"
+                } else {
+                }
+              }                    
+            }
+                    </code></pre>
+                </div>
+            </article>
+            <hr>
+        </div>
+
+
     </section>
 </body>
+
 </html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            clickTd();
+            console.log("문서 읽어들이기 완료");
+        })
+        
+        function clickTd(){
+            $("#table tr").click(function(){
+                var c1 = $(this).children().first().text();
+                var c2 = $(this).children().eq(1).text();
+                var c3 = $(this).children().last().text();
+                $("#span").text(c1+"/"+c2+"/"+c3);
+            });
+        }
+    </script>
+
+</head>
+<body>
+    <section id="sec">
+        <div id="div">
+            <table border="1" id="table">
+                <tr>
+                    <th>번호</th>
+                    <th>제목</th>
+                    <th>작성자</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>첫 번째 게시물 입니다</td>
+                    <td>홍길동</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>두 번째 게시물 입니다</td>
+                    <td>홍길동</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>세 번째 게시물 입니다</td>
+                    <td>홍길동</td>
+                </tr>
+                </table>
+                <span id="span"></span>
+        </div>
+        
+    </section>
+</body>
+</html>

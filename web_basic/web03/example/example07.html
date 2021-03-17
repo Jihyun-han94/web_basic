@@ -1,22 +1,178 @@
+<!-- <input type = "text">로 지정한 영역의 글자 크기 바꾸기 (change) -->
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>example07</title>
-    <script src="/web_basic/web03/js/example07.js"></script>
+    <title>example02</title>
+    <link rel="stylesheet" href="/web_basic/web03/css/example07.css" type="text/css">
+    <script type="text/javascript" src="/web_basic/web03/js/example07.js"></script>
+    <link rel="stylesheet" href="/web_basic/static/bootstrap-5.0.0-beta2-dist/css/bootstrap.css">
+    <script type="test/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="/web_basic/static/bootstrap-5.0.0-beta2-dist/js/bootstrap.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.6.0/styles/atom-one-light.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.6.0/highlight.min.js"></script>
+    <script
+        src="//cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.7.0/highlightjs-line-numbers.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script>hljs.initLineNumbersOnLoad();</script>
 </head>
+
 <body>
     <section>
-        <div>
-            <input type="text" id="weightinput" placeholder="체중을 입력하세요." >
-            <input type="text" id="heightinput">
-            <button onclick="BMICUL(document.getElementById('text') , document.getElementById('weightinput').value , document.getElementById('heightinput').value)" >입력</button>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">로고</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="/web_basic/web03/index_boot.html">Home</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                활용예제
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="/web_basic/web03/example/example01.html">1. 선택 박스로
+                                        1970년 까지의 옵션
+                                        생성하기</a></li>
+                                <li><a class="dropdown-item" href="#">2. 지정한 영역의 글자 크기 바꾸기</a></li>
+                                <li><a class="dropdown-item" href="#">3. 지정한 영역의 색상 바꾸기</a></li>
+                                <li><a class="dropdown-item" href="#">4. 숫자가 아닌 입력이 발생하면 테두리를 붉게 변경</a></li>
+                                <li><a class="dropdown-item" href="#">5. 특수 문자 입력이 발생하면 테두리를 붉게 변경</a></li>
+                                <li><a class="dropdown-item" href="#">6. 랜덤한 사칙연산 문제가 제시되고 제시한 문제의 답을 입력했을 때 정답/오답을 판별하게
+                                        하기</a></li>
+                                <li><a class="dropdown-item" href="#">7. BMI 계산하여 출력 메세지 색상 다르게 표기</a></li>
+                                <li><a class="dropdown-item" href="#">8. 선택박스로 20년까지 옵션 생성한 후, 선택 옵션에서 추가 10년까지의 옵션
+                                        생성</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="#">전체 목록 보기</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                        </li>
+                    </ul>
+                    <form class="d-flex">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+
+        <div class="example7">
+            <hr>
+            <h3 id="ex7">문제 적용 화면</h3>
+            <div id="ex7">
+                <div>
+                    <input type="text" id="weightinput" placeholder="체중을 입력하세요.">
+                    <input type="text" id="heightinput" placeholder="키를 입력하세요.">
+                    <button
+                        onclick="BMICUL(document.getElementById('text') , document.getElementById('weightinput').value , document.getElementById('heightinput').value)">입력</button>
+                </div>
+                <div>
+                    <textarea id="text" cols="30" rows="10"></textarea>
+                </div>
+            </div>
         </div>
-        <div>
-            <textarea  id="text" cols="30" rows="10"></textarea>
+
+        <div class="example7">
+            <hr>
+            <h3 id="ex7">HTML</h3>
+            <article id="ex7">
+            <p>
+            <pre><code class="html">       
+                &lt;div>
+                    &lt;input type="text" id="weightinput" placeholder="체중을 입력하세요.">
+                    &lt;input type="text" id="heightinput" placeholder="키를 입력하세요.">
+                    &lt;button onclick="BMICUL(document.getElementById('text') , document.getElementById('weightinput').value , document.getElementById('heightinput').value)">입력&lt;/button>
+                &lt;/div>
+                &lt;div>
+                    &lt;textarea id="text" cols="30" rows="10">&lt;/textarea>
+                &lt;/div>
+            </code></pre>
+                </p>
+            </article>
+            <hr>
         </div>
+
+        <div class="example7">
+            <hr>
+            <h3 id="ex7">CSS</h3>
+            <article id="ex7">
+                <p>
+                <pre><code class="css">
+                .example7{
+                margin: 10px;
+                }
+                <br>
+                #ex7{
+                margin: 10px;
+                }
+              </code></pre>
+                </p>
+            </article>
+            <hr>
+        </div>
+
+        <div class="example7">
+            <hr>
+            <h3 id="ex7">JavaScript</h3>
+            <article>
+                <div id="ex7">
+                <pre><code class="javascript">
+            function BMICUL(element, weight, height){
+                var h2 = parseInt(height)/100;
+                var BMI = parseInt(weight)/h2 
+                const BMI2 = Math.floor(BMI);
+                        
+                if(BMI2< 20){
+                    element.innerText = "저체중입니다.";
+                    element.style.color = 'red';
+                
+                }else if(BMI2>=20 && BMI2<=24){
+                   element.innerText = "정상체중입니다.";
+                   element.style.color = 'green';
+                               
+                }else if(BMI2>=25 && BMI2<=29){
+                    element.innerText = "과체중입니다.";
+                    element.style.color = 'grey';
+                }else if(BMI2>=30 && BMI2<=34){
+                    element.innerText = "비만입니다.";
+                    element.style.color = 'blue';
+                }else if(BMI2 >=35){
+                   element.innerText = "고도비만입니다.";
+                   element.style.color = 'black';
+                }else{
+                   element.innerText = "잘못 입력하셨습니다.";
+                }
+            }
+                    </code></pre>
+                </div>
+            </article>
+            <hr>
+        </div>
+
+
     </section>
 </body>
+
 </html>
+
+
+
+

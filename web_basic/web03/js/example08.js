@@ -10,18 +10,16 @@ function generateYear(element){
             element.appendChild(option);
         }
     }
-}
 
-function generateYear2(element){
-    var date = new Date();
-    var lastyear = element.lastChild;
-    if (element.children.length <=1){
-        for(let year =  date.getFullYear(); year>=1950 ; year--){
-            let option = document.createElement('option');
-            option.setAttribute("value", year);
-            option.innerText = year;
-            element.appendChild(option);
-    }
-    }
-    
-}
+
+    element.addEventListener('change', function () {
+        if (element.lastChild.value == this.value) {
+            for (let year = this.value -1 ; year > this.value -11; year--){
+                let option = document.createElement('option');
+                option.value = year;
+                option.innerText = year;
+                element.appendChild(option);
+            }
+        }
+    });
+    }   

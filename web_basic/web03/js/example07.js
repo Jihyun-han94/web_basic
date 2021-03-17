@@ -18,17 +18,17 @@ function BMICUL(element, weight, height){
         element.innerText = "저체중입니다.";
         element.style.color = 'red';
 
-    }else if(BMI2>20 && BMI2<24){
+    }else if(BMI2>=20 && BMI2<=24){
         element.innerText = "정상체중입니다.";
         element.style.color = 'green';
         console.log(BMI2);
-    }else if(BMI2>25 && BMI2<29){
+    }else if(BMI2>=25 && BMI2<=29){
         element.innerText = "과체중입니다.";
         element.style.color = 'grey';
-    }else if(BMI2>30 && BMI2<34){
+    }else if(BMI2>=30 && BMI2<=34){
         element.innerText = "비만입니다.";
         element.style.color = 'blue';
-    }else if(BMI2 > 35){
+    }else if(BMI2 >=35){
         element.innerText = "고도비만입니다.";
         element.style.color = 'black';
     }else{
